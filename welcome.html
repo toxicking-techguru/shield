@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   
+    <link rel="stylesheet" href="login.css">
+</head>
+
+
+    <section>
+        <div>
+            <h1> WELCOME TO OUR SHIELD PAGE!</h1>
+            <h1>
+
+
+
+
+
+
+
+
+                <button id="btn" onclick=" myFunction () ">fetch information from the shield API</button>
+
+                <a href="login.html"><button>Go To company forms</button></a>
+
+                <a href=" signinform.html"><button>Go To Pentester,P FORM</button></a>
+                <a href=" home.html"><button>Go To presentation page</button></a>
+
+    </section>
+</head>
+        <div id="animal-info"></div>
+    </h3>
+
+    <script>
+
+        const btn = document.getElementById('btn');
+        var pageCounter = 1;
+
+        var animalContainer = document.getElementById("animal-info");
+
+        function myFunction() {
+
+            var thisIsMyRequest = new XMLHttpRequest();
+
+            thisIsMyRequest.open('GET', 'https://th3-shield.github.io/shield-api/users-' + pageCounter + '.json');
+            thisIsMyRequest.onload = function () {
+                var ourData = JSON.parse(thisIsMyRequest.responseText);
+
+                renderHTML(ourData)
+
+            };
+            thisIsMyRequest.send();
+
+
+
+            pageCounter++;
+
+            if (pageCounter > 2) {
+
+                btn.style.visibility = 'hidden';
+            }
+
+        };
+        function renderHTML(data) {
+
+            var htmlString = "";
+
+            for (i = 0; i < data.length; i++) {
+                htmlString += "<p>" + data[i].name + " was  found  to be vulnerable by  " + data[i].goodat + ".</p>";
+            }
+
+
+
+            animalContainer.insertAdjacentHTML('beforeend', htmlString);
+
+        }
+    </script>
+
+
+
+<body  class="backcolour">
+
+    <meta charset="UTF-8" />
+    <title>Skil Bar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+   
+
+ 
+    <div class="container">
+      <div class="ticker">
+        <div class="title"><h5> who are the shield ?</h5></div>
+        <div class="news">
+          <marquee>
+            <p>
+            
+                The shield is a tech community based in kenya comprising of developers,bug hunters and CTF geeks
+          </p>
+          </marquee>
+        </div>
+      </div>
+    </div>
+  </body>
+
+
+</body>
+
+</html>

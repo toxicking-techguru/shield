@@ -1,0 +1,86 @@
+<!DOCTYPE html>   
+<html class="p">   
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<title> submit page  Page </title>  
+<link rel="stylesheet" href="login.css">
+</head>   
+
+
+
+<script>
+    function myFunction()
+    {
+        var fid = document.getElementById("user_id").value;
+        var mid = document.getElementById("id").value;
+        var rid = document.getElementById("date").value;
+        var kid = document.getElementById("user_name").value;
+        var cid = document.getElementById("password").value;
+        
+
+        if (!fid)
+    {
+        alert("enter User_id");
+        return;
+        }
+       
+       
+        if (!mid)
+    {
+        alert("enter id");
+        return;
+        }
+        if (!rid)
+    {
+        alert("enter date");
+        return;
+        }
+       
+       
+        if (!kid)
+    {
+        alert("enter user_name");
+        return;
+        }
+        if (!cid)
+    {
+        alert("enter password");
+        return;
+        }
+        else
+        {
+            alert("login successfully");
+            return;
+        }
+   
+   
+    }
+    </script>
+   
+
+
+
+
+<body>    
+    <center color="black"> <h1    class= "forblue"> Student Login Form </h1> </center>   
+    <form action="login.php"method="POST" onsubmit="myFunction()">
+        <div> 
+            <label   class= "forblue" >user _id:</label> 
+            <input type ="text"placeholder="Enter User_id" name="user_id" id="user_id">  
+            <label  class= "forblue">id:</label> 
+            <input type ="text" name="id" id="id">  
+            <label  class= "forblue">date:</label> 
+            <input type ="text"placeholder="Enter date" name="date"id="date" required>  
+           
+            <label  class= "forblue">Username : </label>   
+            <input type="text" placeholder="Enter Username" name="user_name" id="user_name" required>  
+            <label  class= "forblue">Password : </label>   
+            <input type="password" placeholder="Enter Password" name="password" id="password" required>  
+            <button  onclick ="myFunction()" type="submit"    name="save">SUBMIT YOUR INFO TO OUR DATABASE</button>  
+            <button onclick ="myFunction()" type="submit"  name="this_is_like_id">UBMIT YOUR INFO TO OUR DATABASE</button> 
+            <input type="checkbox" checked="checked"Remember me >  
+              
+        </div>   
+    </form>     
+</body>     
+</html>  
